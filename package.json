@@ -1,23 +1,26 @@
 {
-  "name": "parcel-project-template",
-  "version": "2.0.0",
-  "description": "",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "name": "event-booster",
+  "version": "1.0.0",
+  "description": "event-booster",
+  "homepage": "https://annazuzkova.github.io/event-booster",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /event-booster/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://github.com/annazuzkova/event-booster.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Anna Zyizkova <famzu2018@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/annazuzkova/event-booster/issues"
   },
   "dependencies": {
+    "basiclightbox": "^5.0.4",
+    "handlebars": "^4.7.8",
+    "lodash": "^4.17.21",
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {

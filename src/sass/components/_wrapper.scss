@@ -1,0 +1,55 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background-color: var(--colorBgPrimary);
+  background-image: $bgMobile;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+  @include retina {
+    background-image: $bgMobile2x;
+  }
+}
+@supports (background-image: $bgMobileWebp) {
+  .wrapper {
+    background-image: $bgMobileWebp;
+    @include retina {
+      background-image: $bgMobileWebp2x;
+    }
+  }
+}
+@media (min-width: 468px) {
+  .wrapper {
+    background-image: $bgTablet, $bgMain;
+    background-repeat: no-repeat, repeat-y;
+    background-size: contain, cover;
+    @include retina {
+      background-image: $bgTablet2x, $bgMain2x;
+    }
+  }
+  @supports (background-image: $bgTabletWebp) {
+    .wrapper {
+      background-image: $bgTabletWebp, $bgMainWebp;
+      @include retina {
+        background-image: $bgTabletWebp2x, $bgMainWebp2x;
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper {
+    background-image: $bgDesktop, $bgMain;
+    @include retina {
+      background-image: $bgbgDesktop2x, $bgMain2x;
+    }
+  }
+  @supports (background-image: $bgbgDesktopWebp) {
+    .wrapper {
+      background-image: $bgbgDesktopWebp, $bgMainWebp;
+      @include retina {
+        background-image: $bgbgDesktopWebp2x, $bgMainWebp2x;
+      }
+    }
+  }
+}

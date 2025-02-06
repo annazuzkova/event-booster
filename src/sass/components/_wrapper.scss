@@ -41,14 +41,14 @@
   .wrapper {
     background-image: $bgDesktop, $bgMain;
     @include retina {
-      background-image: $bgbgDesktop2x, $bgMain2x;
+      background-image: $bgDesktop2x, $bgMain2x;
     }
   }
-  @supports (background-image: $bgbgDesktopWebp) {
+  @supports (background-image: $bgDesktopWebp) {
     .wrapper {
-      background-image: $bgbgDesktopWebp, $bgMainWebp;
+      background-image: $bgDesktopWebp, $bgMainWebp;
       @include retina {
-        background-image: $bgbgDesktopWebp2x, $bgMainWebp2x;
+        background-image: $bgDesktopWebp2x, $bgMainWebp2x;
       }
     }
   }

@@ -1,0 +1,188 @@
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: $colorModal;
+  border-radius: 150px 0;
+  max-width: 272px;
+  padding: 75px 15px 104px 15px;
+  &__close {
+    position: absolute;
+    max-width: 17px;
+    right: 25px;
+    top: 25px;
+  }
+  &__icon-container {
+    max-width: 102px;
+    border-radius: 50%;
+  }
+  &__main {
+    display: flex;
+  }
+  &__photo {
+    display: none;
+  }
+  &__information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  &__categoris {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  &__category {
+    font-weight: 600;
+    font-size: 20px;
+    color: $colorTextTitlePrimary;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: $colorTextSecondary;
+  }
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+  &__tickets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  &__ticket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  &__price {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: $colorTextSecondary;
+    display: flex;
+    gap: 14px;
+    &::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 16px;
+      background-image: url(/src/images/modal/ticket.svg);
+    }
+  }
+  &__buy {
+    max-width: 145px;
+    font-weight: 500;
+    font-size: 16px;
+    color: $colorTextPrimary;
+    border-radius: 5px;
+    padding: 10px 19px;
+    background-color: $colorButtons;
+  }
+  &__more {
+    max-width: 230px;
+    font-weight: 500;
+    font-size: 16px;
+    color: $colorButtons;
+    border: 1px solid $colorButtons;
+    border-radius: 5px;
+    padding: 10px 3px;
+    background-color: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal {
+    gap: 43px;
+    max-width: 595px;
+    border-radius: 300px 0;
+    padding: 28px 17px 56px 50px;
+    &__icon-container {
+      max-width: 70px;
+    }
+    &__photo {
+      display: block;
+      width: 233px;
+    }
+    &__information {
+      align-items: flex-start;
+      max-width: 265px;
+    }
+    &__categoris {
+      align-items: flex-start;
+    }
+    &__text {
+      text-align: left;
+    }
+    &__text-container {
+      gap: 3px;
+      align-items: flex-start;
+    }
+    &__tickets {
+      align-items: flex-start;
+    }
+    &__ticket {
+      align-items: flex-start;
+    }
+    &__more {
+      max-width: 255px;
+      padding: 10px 15px;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .modal {
+    max-width: 930px;
+    padding: 62px 30px;
+    &__icon-container {
+      max-width: 132px;
+    }
+    &__photo {
+      display: block;
+      width: 360px;
+    }
+    &__information {
+      max-width: 450px;
+      gap: 20px;
+    }
+    &__categoris {
+      gap: 7px;
+    }
+    &__category {
+      font-size: 24px;
+    }
+    &__text {
+      font-size: 18px;
+    }
+    &__text-container {
+      gap: 5px;
+    }
+    &__tickets {
+      gap: 30px;
+    }
+    &__ticket {
+      gap: 20px;
+    }
+    &__price {
+      font-size: 18px;
+      &::before {
+        width: 30px;
+        height: 20px;
+      }
+    }
+    &__more {
+      max-width: 255px;
+    }
+  }
+}

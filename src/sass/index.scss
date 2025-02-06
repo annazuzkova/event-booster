@@ -1,1 +1,6 @@
-@import './common';
+@import './global/common';
+@import './global/reset';
+@import './utils/variables';
+@import './utils/placeholders';
+@import './global/global';
+@import './components/modal';

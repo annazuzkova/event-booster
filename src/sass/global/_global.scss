@@ -9,3 +9,10 @@ img {
 .no-scroll {
   overflow: hidden;
 }
+
+body {
+  color: $colorTextTitlePrimary;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}

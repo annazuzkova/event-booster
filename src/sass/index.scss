@@ -1,6 +1,10 @@
-// @import './global/common';
-// @import './global/reset';
-// @import './utils/variables';
-// @import './utils/placeholders';
-// @import './global/global';
-// @import './components/modal';
+@import './global/reset';
+@import './global/common';
+@import './utils/variables';
+@import './utils/placeholders';
+@import './utils/mixin';
+@import './global/global';
+
+@import './components/wrapper';
+@import './components/main';
+@import './components/modal';

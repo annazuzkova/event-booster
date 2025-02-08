@@ -1,33 +1,34 @@
 .footer {
   display: flex;
   justify-content: center;
-  margin-bottom: 27px;
   color: $colorTextTertiary;
   &__container {
     max-width: 252px;
     align-items: center;
+    padding-bottom: 27px;
     text-align: center;
   }
   &__text {
     font-size: 14px;
-    line-height: 17px;
+    line-height: calc(17px / 14px);
   }
 }
 @media (min-width: 768px) {
   .footer {
-    margin-bottom: 18px;
-
     &__container {
       max-width: none;
+      padding-bottom: 18px;
     }
     &__text {
       font-size: 16px;
-      line-height: 19.5px;
+      line-height: calc(19.5px / 16px);
     }
   }
 }
 @media (min-width: 1280px) {
   .footer {
-    margin-bottom: 19px;
+    &__container {
+      padding-bottom: 19px;
+    }
   }
 }

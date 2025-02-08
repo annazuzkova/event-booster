@@ -1,12 +1,10 @@
 .footer {
-  display: flex;
-  justify-content: center;
-  color: $colorTextTertiary;
+  color: var(--colorTextSecondary);
   &__container {
     max-width: 252px;
     align-items: center;
-    padding-bottom: 27px;
     text-align: center;
+    padding-bottom: 27px;
   }
   &__text {
     font-size: 14px;

@@ -2,5 +2,13 @@
 @import './global/common';
 @import './utils/variables';
 @import './utils/placeholders';
+@import './utils/mixin';
 @import './global/global';
+
 @import './components/footer'
+
+
+@import './components/wrapper';
+@import './components/main';
+@import './components/modal';
+

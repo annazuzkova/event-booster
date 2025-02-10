@@ -11,7 +11,7 @@
 }
 @media (min-width: 768px) {
   .footer {
-    ii &__container {
+     &__container {
       padding-bottom: 18px;
     }
     &__text {
@@ -19,7 +19,7 @@
     }
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .footer {
     &__container {
       padding-bottom: 19px;

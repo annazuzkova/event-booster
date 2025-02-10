@@ -1,31 +1,25 @@
 .footer {
-  display: flex;
-  justify-content: center;
   color: var(--colorTextSecondary);
   &__container {
-    max-width: 252px;
-    align-items: center;
-    padding-bottom: 27px;
     text-align: center;
+    padding-bottom: 27px;
   }
   &__text {
     font-size: 14px;
-    line-height: calc(17px / 14px);
+    line-height: 1.21;
   }
 }
 @media (min-width: 768px) {
   .footer {
-    &__container {
-      max-width: none;
+     &__container {
       padding-bottom: 18px;
     }
     &__text {
       font-size: 16px;
-      line-height: calc(19.5px / 16px);
     }
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .footer {
     &__container {
       padding-bottom: 19px;

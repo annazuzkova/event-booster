@@ -18,9 +18,7 @@ export const getEvents = async params => {
         id: event.id,
         image: event.images
           .filter(image => !image.fallback)
-          .sort((prev, next) => {
-            next.width - prev.width;
-          })[0],
+          .sort((prev, next) => next.width - prev.width)[0],
         name: event.name,
       };
     });

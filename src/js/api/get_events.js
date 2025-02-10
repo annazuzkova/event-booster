@@ -9,6 +9,27 @@ export const getEvents = async params => {
       throw new Error(`Помилка при запиті івентів: ${response.status}`);
     }
     const data = await response.json();
-    return data;
-  } catch (error) {}
+    if (!data._embedded || !data._embedded.events) {
+      return { page: data.page, events: [] };
+    }
+    const eventsList = data._embedded.events.map(event => {
+      return {
+        dates: event.dates,
+        id: event.id,
+        image: event.images
+          .filter(image => !image.fallback)
+          .sort((prev, next) => {
+            next.width - prev.width;
+          })[0],
+        name: event.name,
+      };
+    });
+    const events = {
+      page: data.page,
+      events: eventsList || [],
+    };
+    return events;
+  } catch (error) {
+    console.error('Помилка при отримані івентів', error);
+  }
 };

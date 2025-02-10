@@ -5,4 +5,3 @@ const app = async () => {
   console.log(data);
 };
 app();
-console.log('Hello world');

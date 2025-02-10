@@ -1,25 +1,21 @@
 .footer {
   color: var(--colorTextSecondary);
   &__container {
-    max-width: 252px;
-    align-items: center;
     text-align: center;
     padding-bottom: 27px;
   }
   &__text {
     font-size: 14px;
-    line-height: calc(17px / 14px);
+    line-height: 1.21;
   }
 }
 @media (min-width: 768px) {
   .footer {
-    &__container {
-      max-width: none;
+    ii &__container {
       padding-bottom: 18px;
     }
     &__text {
       font-size: 16px;
-      line-height: calc(19.5px / 16px);
     }
   }
 }

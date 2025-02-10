@@ -21,7 +21,7 @@ body {
 .event::before {
   border: 1px solid var(--colorTextTitle);
   width: 85%;
-  height: 101px;
+  height: 45%;
   position: absolute;
   top: -10px;
   right: -10px;
@@ -71,13 +71,14 @@ body {
     flex-basis: calc((100% - 50px) / 3);
   }
 
-  .event::before {
-    // width: 153;
-    // height: 143;
-  }
   .event__img {
-    // width: 180px;
-    // height: 227px;
+    width: 180;
+    height: 227;
+  }
+  .event::before {
+    height: 50%;
+    width: 70%;
+    right: 20px;
   }
   .event__title {
     font-size: 16px;
@@ -98,5 +99,9 @@ body {
   }
   .events__item {
     flex-basis: calc((100% - 210px) / 4);
+  }
+  .event::before {
+    width: 65%;
+    right: 30px;
   }
 }

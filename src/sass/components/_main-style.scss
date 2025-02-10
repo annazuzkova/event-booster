@@ -1,44 +1,47 @@
-body {
-  background-color: black;
-}
 .events__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 50px 15px 0px 25px;
-  gap: 4px;
+  column-gap: 15px;
+  row-gap: 30px;
+}
+body {
+  background-color: black;
+}
+.events__item {
+  flex-basis: calc((100% - 15px) / 2);
 }
 .event {
-  padding-bottom: 30px;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 5px;
+  position: relative;
 }
 .event::before {
-  border: $colorTextTitlePrimary;
-  width: 109;
-  height: 101;
-  top: -15px;
-  left: -15px;
+  border: 1px solid var(--colorTextTitle);
+  width: 85%;
+  height: 101px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
   border-radius: 50px 0 50px 0;
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-width: 1px;
+  content: '';
+}
+.event-photo {
+  border-radius: 50px 0px 50px 0px;
+  overflow: hidden;
 }
 .event__img {
-  width: 128px;
-  height: 161px;
-  border-radius: 50px 0px 50px 0px;
+  object-fit: cover;
 }
 .event__title {
   font-size: 14px;
   font-weight: 700;
   line-height: 17.07px;
-  font-family: $fontTextPrimary;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: $colorTextTitlePrimary;
+  font-family: var(--fontTextPrimary);
+
+  color: var(--colorTextTitle);
   text-align: center;
   max-width: 112px;
 }
@@ -49,34 +52,32 @@ body {
   height: 10px;
 }
 .event__time {
-  color: $colorTextPrimary;
+  color: var(--colorTextPrimary);
 
-  font-family: $fontTextPrimary;
+  font-family: var(--fontTextPrimary);
 }
 .event-card__venue {
-  color: $colorTextPrimary;
+  color: var(--colorTextPrimary);
   font-weight: bold;
   display: flex;
 }
 @media (min-width: 768px) {
   .events__list {
-    gap: 13px;
+    column-gap: 25px;
+    row-gap: 58px;
     justify-content: center;
-    padding: 50px 87px 0px;
   }
-  .event {
-    max-width: 196px;
-    padding-bottom: 45px;
+  .events__item {
+    flex-basis: calc((100% - 50px) / 3);
   }
+
   .event::before {
-    width: 153;
-    height: 143;
+    // width: 153;
+    // height: 143;
   }
   .event__img {
-    width: 180px;
-    height: 227px;
-
-    border-radius: 50px 0px 50px 0px;
+    // width: 180px;
+    // height: 227px;
   }
   .event__title {
     font-size: 16px;
@@ -92,11 +93,10 @@ body {
 }
 @media (min-width: 1200px) {
   .events__list {
-    padding: 50px 115px 0px;
-    gap: 56;
+    column-gap: 70px;
+    row-gap: 60px;
   }
-
-  .event {
-    padding-bottom: 50px;
+  .events__item {
+    flex-basis: calc((100% - 210px) / 4);
   }
 }

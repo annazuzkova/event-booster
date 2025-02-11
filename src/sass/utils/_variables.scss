@@ -1,4 +1,3 @@
-
 :root {
   //кольори
   --colorTextTitle: #dc56c5;
@@ -7,6 +6,8 @@
   --colorButtons: #4c00fe;
   --colorTextSecondary: #939393;
   --colorBgModal: #fff2fd;
+  --colorInput: rgba(255, 255, 255, 0.2);
+
   //шрифти
   --fontTextPrimary: 'Montserrat', serif;
 }
@@ -28,4 +29,3 @@ $bgMain: url(../images/bg/main-background.jpg);
 $bgMain2x: url(../images/bg/main-background@2x.jpg);
 $bgMainWebp: url(../images/bg/main-background.webp);
 $bgMainWebp2x: url(../images/bg/main-background@2x.webp);
-

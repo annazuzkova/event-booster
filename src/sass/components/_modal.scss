@@ -159,9 +159,11 @@
     }
     &__category {
       font-size: 24px;
+      line-height: calc(30px / 24px);
     }
     &__text {
       font-size: 18px;
+      line-height: calc(22px / 18px);
     }
     &__text-container {
       gap: 5px;
@@ -174,6 +176,7 @@
     }
     &__price {
       font-size: 18px;
+      line-height: calc(22px / 18px);
       &::before {
         width: 30px;
         height: 20px;

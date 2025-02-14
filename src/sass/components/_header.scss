@@ -1,24 +1,30 @@
 .header {
-  &__container {
-    background-color: black;
-    background-image: url('/src/images/header/header__background.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    padding-top: 80px;
-    padding-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  position: relative;
+  &__logo {
+    width: 60px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
   }
 
-  &__logo {
-    width: 105px;
-    position: absolute;
-    top: 0;
-    left: 0;
+  &__main {
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 136px;
+      height: 118px;
+      background: linear-gradient(215deg, #151515 0%, #505050 100%);
+      border-bottom-right-radius: 100%;
+    }
   }
 }
 
-.navigation {
+.search {
   &__title {
     font-size: 18px;
     font-weight: 900;
@@ -29,11 +35,13 @@
     line-height: calc(22 / 18);
     margin-bottom: 25px;
   }
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
+}
+
+.search__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
 }
 
 .form {
@@ -41,7 +49,7 @@
     width: 100%;
     max-width: 270px;
     margin: 0 auto;
-    background-color: $headerInputsColor;
+    background-color: var(--colorInput);
     backdrop-filter: blur(20px);
     border-radius: 20px;
     padding: 10px 30px 10px 30px;
@@ -57,7 +65,7 @@
     background-color: transparent;
     position: relative;
     &::placeholder {
-      color: $colorTextTertiary;
+      color: var(--colorTextSecondary);
     }
   }
 
@@ -90,33 +98,39 @@
 
   &__section--country::before {
     content: 'Choose country';
-    color: $colorTextTertiary;
+    color: var(--colorTextSecondary);
   }
 }
 
 @media screen and (min-width: 768px) {
   .header {
     &__logo {
-      width: 180px;
+      width: 100px;
     }
     &__container {
       padding-top: 40px;
       padding-bottom: 183px;
     }
+
+    &__main {
+      &::before {
+        width: 202px;
+        height: 167px;
+      }
+    }
   }
 
-  .navigation {
+  .search {
     &__title {
       font-size: 30px;
       max-width: 355px;
       margin-bottom: 30px;
     }
-
-    &__form {
-      flex-direction: row;
-      gap: 30px;
-      justify-content: center;
-    }
+  }
+  .form {
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
   }
 
   .form__section {
@@ -127,14 +141,21 @@
 @media screen and (min-width: 1280px) {
   .header {
     &__logo {
-      width: 200px;
+      width: 136px;
     }
     &__container {
       padding-bottom: 193px;
     }
+
+    &__main {
+      &::before {
+        width: 256px;
+        height: 222px;
+      }
+    }
   }
 
-  .navigation {
+  .search {
     &__title {
       font-size: 50px;
       max-width: 590px;

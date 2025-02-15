@@ -7,16 +7,11 @@ import eventsTemplate from 'bundle-text:../../templates/events.hbs';
 export const handleSearch = async event => {
   //код обробки
   const searchQuery = event.target.value.trim();
- const keyWords = searchQuery.split(" ").join("%20")
- console.log(keyWords);
- 
-
-  
+  const keyWords = searchQuery.split(' ').join('%20');
+  console.log(keyWords);
 };
-export const addSearchHandlers = searchInput => {
+export const addSearchHandlers = async searchInput => {
   if (searchInput) {
-    console.log("addEventListener");
-    
     searchInput.addEventListener('input', debounce(handleSearch, 500));
   }
 };

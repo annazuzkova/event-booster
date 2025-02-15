@@ -1,6 +1,12 @@
-export const createButtons = async (currentPage, maxPage) => {
+export const renderButtons = async (currentPage, maxPage, container) => {
   let markup = ``;
-  const pagesCalc = maxPage - currentPage;
+  let totalPages = maxPage;
+
+  if (maxPage > 49) {
+    totalPages = 49;
+  }
+
+  const pagesCalc = totalPages - currentPage;
 
   if (currentPage > 1) {
     markup += `<li class="pagination__item"><button class="pagination__button active" data-page="${
@@ -28,7 +34,7 @@ export const createButtons = async (currentPage, maxPage) => {
     }">${currentPage + 2}</button></li>`;
   }
 
-  markup += `<li class="pagination__item"><button class="pagination__button active" data-page="${maxPage}">${maxPage}</button></li>`;
+  markup += `<li class="pagination__item"><button class="pagination__button active" data-page="${totalPages}">${totalPages}</button></li>`;
 
-  return markup;
+  container.innerHTML = markup;
 };

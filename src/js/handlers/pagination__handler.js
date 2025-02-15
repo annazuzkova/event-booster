@@ -2,11 +2,13 @@ import { saveParams, loadParams } from '../helpers/storage';
 import { getEvents } from '../api/get_events';
 import { renderButtons } from '../render/renderPagination';
 import { renderEvents } from '../render/render_events';
-const API_KEY = 'A8TfknWuvAEesY78luj7BLu0h4tXEN6d';
+import eventsTemplate from 'bundle-text:../../templates/events.hbs';
+import { API_KEY } from '../config';
 
 export const paginationHandler = async event => {
   if (event.target.tagName === 'BUTTON') {
-    container.innerHTML = '';
+    const eventContainer = document.querySelector('[data-events]');
+    const paginationContainer = document.querySelector('[data-pagination]');
 
     const storageParams = loadParams();
 
@@ -16,17 +18,10 @@ export const paginationHandler = async event => {
       apiKey: API_KEY,
       currentPage,
     });
+    saveParams(...storageParams, currentPage);
 
-    console.log(data);
-
-    page = Number(event.target.dataset.page);
-    storageParams.set('_page', page);
-    saveParams(storageParams);
-
-    const params = new URLSearchParams(storageParams);
-    const events = await getEvents(params);
-
-    renderEvents(events, container, template);
+    renderEvents(data.events, eventContainer, eventsTemplate);
+    renderButtons(data.page.number, data.page.totalPages, paginationContainer);
   }
 };
 

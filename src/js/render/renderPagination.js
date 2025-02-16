@@ -36,8 +36,14 @@ export const renderButtons = async (currentPage, maxPage, container) => {
       currentPage + 2
     }">${currentPage + 3}</button></li>`;
   }
+  markup += `<li class="pagination__item pagination__item--dots">
+    ...
+  </li>`;
 
-  markup += `<li class="pagination__item"><button class="pagination__button active" data-page="${totalPages}">${totalPages}</button></li>`;
+  markup += `<li class="pagination__item"><button class="pagination__button active" data-page="${totalPages}">${
+    totalPages + 1
+  }</button></li>`;
 
+  console.log(markup);
   container.innerHTML = markup;
 };

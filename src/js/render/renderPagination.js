@@ -10,29 +10,29 @@ export const renderButtons = async (currentPage, maxPage, container) => {
   console.log(pagesCalc);
 
   if (currentPage > 2) {
-    markup += `<li class="pagination__item"><button class="pagination__button active" data-page="${
+    markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
       currentPage - 2
     }">${currentPage - 1}</button></li>`;
   }
 
   if (currentPage > 1) {
-    markup += `<li class="pagination__item"><button class="pagination__button active" data-page="${
+    markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
       currentPage - 1
     }">${currentPage}</button></li>`;
   }
 
-  markup += `<li class="pagination__item"><button class="pagination__button"  data-page="${currentPage}">${
+  markup += `<li class="pagination__item"><button class="pagination__button active"  data-page="${currentPage}">${
     currentPage + 1
   }</button></li>`;
 
   if (pagesCalc > 1) {
-    markup += `<li class="pagination__item"><button class="pagination__button active" data-page="${
+    markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
       currentPage + 1
     }">${currentPage + 2}</button></li>`;
   }
 
   if (pagesCalc > 2) {
-    markup += `<li class="pagination__item"><button class="pagination__button active" data-page="${
+    markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
       currentPage + 2
     }">${currentPage + 3}</button></li>`;
   }
@@ -40,7 +40,7 @@ export const renderButtons = async (currentPage, maxPage, container) => {
     ...
   </li>`;
 
-  markup += `<li class="pagination__item"><button class="pagination__button active" data-page="${totalPages}">${
+  markup += `<li class="pagination__item"><button class="pagination__button" data-page="${totalPages}">${
     totalPages + 1
   }</button></li>`;
 

@@ -3,46 +3,83 @@
     <img src='/src/images/modal/close.svg' alt='X' class='modal__close-icon' />
   </button>
   <div class='modal__icon-container'>
-    <img src='#' alt='фото группи' class='modal__icon' />
+    {{#if this.logo.url}}
+      <img
+        class='event__img'
+        src='{{this.logo.url}}'
+        alt='Постер {{this.name}}'
+      />
+    {{else}}
+      <img
+        class='event__img'
+        {{! В наступному рядку підключити дефолтне зображення, коли постер, що дає бекенд не підходить }}
+        src='default-image-url.jpg'
+        alt='Постер {{this.name}}'
+      />
+    {{/if}}
   </div>
   <div class='modal__main'>
     <div class='modal__photo'>
-      <img src='#' alt='фото группи' class='modal__img' />
+      {{#if this.poster.url}}
+        <img
+          class='event__img'
+          src='{{this.poster.url}}'
+          alt='Постер {{this.name}}'
+        />
+      {{else}}
+        <img
+          class='event__img'
+          {{! В наступному рядку підключити дефолтне зображення, коли постер, що дає бекенд не підходить }}
+          src='default-image-url.jpg'
+          alt='Постер {{this.name}}'
+        />
+      {{/if}}
     </div>
     <ul class='modal__information'>
       <li class='modal__categoris'>
         <h2 class='modal__category'>INFO</h2>
-        <p class='modal__text'>
-        </p>
+        {{#if this.info}}
+          <p class='modal__text'>
+            {{this.info}}
+          </p>
+        {{else}}
+          <p class='modal__text'>
+            ---
+          </p>
+        {{/if}}
+
       </li>
       <li class='modal__categoris'>
         <h2 class='modal__category'>WHEN</h2>
         <div class='modal__text-container'>
-          <p class='modal__text'></p>
-          <p class='modal__text'></p>
+          <p class='modal__text'>{{this.time.start.localDate}}</p>
+          <p class='modal__text'>{{this.time.start.localTime}}
+            {{this.time.timezone}}</p>
         </div>
       </li>
       <li class='modal__categoris'>
         <h2 class='modal__category'>WHERE</h2>
         <div class='modal__text-container'>
-          <p class='modal__text'></p>
-          <p class='modal__text'></p>
+          <p class='modal__text'>{{this.place.city.name}}</p>
+          <p class='modal__text'>{{this.place.country.name}}</p>
         </div>
       </li>
       <li class='modal__categoris'>
         <h2 class='modal__category'>WHO</h2>
-        <p class='modal__text'></p>
+        <p class='modal__text'>{{this.name}}</p>
       </li>
       <li class='modal__categoris'>
         <h2 class='modal__category'>PRICES</h2>
         <div class='modal__tickets'>
           <div class='modal__ticket'>
-            <p class='modal__price'></p>
-            <button class='modal__buy'>BUY TICKETS</button>
+            <p class='modal__price'>Standart
+              {{this.pricesStandarMin}}-{{this.pricesStandarMax}}
+              {{this.currency}}</p>
+            <button class='modal__buy'> <a href=''>BUY TICKETS</a> </button>
           </div>
           <div class='modal__ticket'>
             <p class='modal__price'></p>
-            <button class='modal__buy'>BUY TICKETS</button>
+            <button class='modal__buy'><a href=''>BUY TICKETS</a></button>
           </div>
         </div>
       </li>

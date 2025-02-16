@@ -1,5 +1,5 @@
-import { formatEvent } from '../helpers/format_events';
-export const getEvents = async (params = {}) => {
+import { formatEvent } from '../helpers/format_event';
+export const getEvent = async (params = {}) => {
   const { id, apiKey } = params; //деструктуризація параметрів з присвоєнням дефолтних значень, якщо вони незаданні
   const queryParams = new URLSearchParams({
     id: id,

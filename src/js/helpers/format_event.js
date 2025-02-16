@@ -5,13 +5,21 @@ export const formatEvents = data => {
   const formatedEvent = data._embedded.events.map(event => {
     return {
       dates: event.dates,
-      id: event.id,
       poster:
         event.images
-          .filter(image => !image.fallback && image.width < 960)
+          .filter(image => !image.fallback)
           .sort((prev, next) => next.width - prev.width)[0] || {}, // обираємо найбільше зображення, ширина якого не перевищує 960px
+      logo:
+        event.images
+          .filter(image => !image.fallback && image.width < 640)
+          .sort((prev, next) => next.width - prev.width)[0] || {},
       name: event.name,
       place: event._embedded?.venues[0].name,
+      time: event.dates,
+      info: event.info,
+      pricesStandarMin: event.priceRanges[0].min,
+      pricesStandarMax: event.priceRanges[0].max,
+      currency: event.priceRanges[0].currency,
     };
   });
   return {

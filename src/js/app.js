@@ -5,7 +5,7 @@ import { addSearchHandlers } from './handlers/search_by_keyword';
 const API_KEY = 'A8TfknWuvAEesY78luj7BLu0h4tXEN6d'; //замінити ключ на ключ тімліда
 
 const eventContainer = document.querySelector('[data-events]');
-const eventSearch = document.querySelector('[data-search]')
+const eventSearch = document.querySelector('[data-search]');
 const app = async () => {
   const data = await getEvents({
     currentPage: 0,
@@ -13,7 +13,7 @@ const app = async () => {
     apiKey: API_KEY,
   });
   renderEvents(data.events, eventContainer, eventsTemplate);
-  await addSearchHandlers(eventSearch)
+  await addSearchHandlers(eventSearch);
 };
 
 app();

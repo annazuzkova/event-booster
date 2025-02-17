@@ -34,6 +34,11 @@
   display: flex;
   gap: 5px;
   justify-content: center;
+  align-items: center;
+}
+
+.pagination__item--dots {
+  color: var(--colorTextPrimary);
 }
 
 @media (min-width: 768px) {
@@ -46,21 +51,25 @@
 
 @keyframes slideAnimationLeft {
   0% {
-    left: -100%;
+    transform: translateX(-100%);
+    opacity: 0;
   }
 
   100% {
-    left: 0;
+    transform: translateX(0%);
+    opacity: 1;
   }
 }
 
 @keyframes slideAnimationRight {
   0% {
-    right: -100%;
+    transform: translateX(100%);
+    opacity: 0;
   }
 
   100% {
-    right: 0px;
+    transform: translateX(0%);
+    opacity: 1;
   }
 }
 

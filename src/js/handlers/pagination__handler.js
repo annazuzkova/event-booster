@@ -18,7 +18,7 @@ export const paginationHandler = async event => {
       apiKey: API_KEY,
       currentPage,
     });
-    saveParams(...storageParams, currentPage);
+    saveParams({ ...storageParams, currentPage });
 
     renderEvents(data.events, eventContainer, eventsTemplate);
     renderButtons(data.page.number, data.page.totalPages, paginationContainer);

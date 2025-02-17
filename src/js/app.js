@@ -7,10 +7,9 @@ import { addSearchHandlers } from './handlers/search_by_keyword';
 
 const API_KEY = 'A8TfknWuvAEesY78luj7BLu0h4tXEN6d'; //замінити ключ на ключ тімліда
 
-const select = document.querySelector('.form__select');
+const selectCountry = document.querySelector('[data-select_couuntry]');
 const eventContainer = document.querySelector('[data-events]');
 const eventSearch = document.querySelector('[data-search]');
-
 
 const app = async () => {
   renderCountrie();
@@ -21,8 +20,7 @@ const app = async () => {
   });
   renderEvents(data.events, eventContainer, eventsTemplate);
   await addSearchHandlers(eventSearch);
-  addCountryHandler(select);
+  addCountryHandler(selectCountry);
 };
 
 app();
-

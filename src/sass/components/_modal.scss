@@ -39,12 +39,12 @@
   &__category {
     font-weight: 600;
     font-size: 20px;
+    line-height: calc(24px / 20px);
   }
   &__text {
-    font-weight: 400;
-    font-size: 16px;
     text-align: center;
     color: var(--colorBgPrimary);
+    line-height: calc(20px / 16px);
   }
   &__text-container {
     display: flex;
@@ -65,12 +65,11 @@
     gap: 10px;
   }
   &__price {
-    font-weight: 400;
-    font-size: 16px;
     text-align: center;
     color: var(--colorBgPrimary);
     display: flex;
     gap: 14px;
+    line-height: calc(20px / 16px);
     &::before {
       content: '';
       display: block;
@@ -82,21 +81,21 @@
   &__buy {
     max-width: 145px;
     font-weight: 500;
-    font-size: 16px;
     color: var(--colorTextPrimary);
     border-radius: 5px;
     padding: 10px 19px;
     background-color: var(--colorButtons);
+    line-height: calc(20px / 16px);
   }
   &__more {
     max-width: 230px;
     font-weight: 500;
-    font-size: 16px;
     color: var(--colorButtons);
     border: 1px solid var(--colorButtons);
     border-radius: 5px;
     padding: 10px 3px;
     background-color: none;
+    line-height: calc(20px / 16px);
   }
 }
 
@@ -160,9 +159,11 @@
     }
     &__category {
       font-size: 24px;
+      line-height: calc(30px / 24px);
     }
     &__text {
       font-size: 18px;
+      line-height: calc(22px / 18px);
     }
     &__text-container {
       gap: 5px;
@@ -175,6 +176,7 @@
     }
     &__price {
       font-size: 18px;
+      line-height: calc(22px / 18px);
       &::before {
         width: 30px;
         height: 20px;

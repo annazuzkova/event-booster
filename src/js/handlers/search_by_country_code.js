@@ -1,22 +1,33 @@
 import { getEvents } from '../api/get_events.js';
-
 import { renderEvents } from '../render/render_events.js';
-
 import { saveParams, loadParams } from '../helpers/storage.js';
-const eventContainer = document.querySelector('[data-events]');
-
+import { renderButtons } from '../render/renderPagination.js';
 import eventsTemplate from 'bundle-text:../../templates/events.hbs';
+import { API_KEY } from '../config.js';
 
-const API_KEY = 'A8TfknWuvAEesY78luj7BLu0h4tXEN6d';
+const eventContainer = document.querySelector('[data-events]');
+const paginationContainer = document.querySelector('[data-pagination]');
 
 export const habdleCountryChange = async event => {
   const countryCode = event.target.value;
   const params = loadParams();
   try {
     if (countryCode) {
-      const data = await getEvents({ ...params, apiKey: API_KEY, countryCode });
+      const data = await getEvents({
+        ...params,
+        apiKey: API_KEY,
+        countryCode,
+        currentPage: 0,
+      });
+
       saveParams({ ...params, countryCode });
+
       renderEvents(data.events, eventContainer, eventsTemplate);
+      await renderButtons(
+        data.page.number,
+        data.page.totalPages,
+        paginationContainer
+      );
     }
   } catch (error) {
     console.error('Error finding events:', error);

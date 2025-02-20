@@ -54,9 +54,7 @@
     border-radius: 20px;
     padding: 10px 30px 10px 30px;
     &--country {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 0;
     }
   }
 
@@ -87,19 +85,18 @@
     appearance: none;
     background-color: transparent;
     border: none;
-
+    width: 100%;
     background-image: url('/src/images/header/icons/dropdown.svg');
     cursor: pointer;
-    width: 15px;
-    height: 10px;
     background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  &__section--country::before {
-    content: 'Choose country';
+    background-position: calc(100% - 30px);
     color: var(--colorTextSecondary);
+    padding: 10px 50px 10px 30px;
   }
+}
+
+option {
+  font-size: 16px;
 }
 
 @media screen and (min-width: 768px) {
@@ -126,11 +123,12 @@
       max-width: 355px;
       margin-bottom: 30px;
     }
-  }
-  .form {
-    flex-direction: row;
-    gap: 30px;
-    justify-content: center;
+
+    &__container {
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+    }
   }
 
   .form__section {
@@ -138,7 +136,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
   .header {
     &__logo {
       width: 136px;

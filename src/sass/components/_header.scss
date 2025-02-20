@@ -3,10 +3,10 @@
   padding-bottom: 50px;
   position: relative;
   &__logo {
-    width: 60px;
+    width: 45px;
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 30px;
+    left: 30px;
   }
 
   &__main {
@@ -16,8 +16,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 136px;
-      height: 118px;
+      width: 100px;
+      height: 90px;
       background: linear-gradient(215deg, #151515 0%, #505050 100%);
       border-bottom-right-radius: 100%;
     }

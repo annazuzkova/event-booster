@@ -1,51 +1,53 @@
 export const renderButtons = async (currentPage, maxPage, container) => {
-  let markup = ``;
-  let totalPages = maxPage;
+  if (maxPage > 1) {
+    let markup = ``;
+    let totalPages = maxPage;
 
-  if (maxPage > 49) {
-    totalPages = 50;
-  }
+    if (maxPage > 49) {
+      totalPages = 50;
+    }
 
-  const pagesCalc = totalPages - currentPage;
-  console.log(pagesCalc);
+    const pagesCalc = totalPages - currentPage;
+    console.log(pagesCalc);
 
-  if (currentPage > 2) {
-    markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
-      currentPage - 2
-    }">${currentPage - 1}</button></li>`;
-  }
+    if (currentPage > 2) {
+      markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
+        currentPage - 2
+      }">${currentPage - 1}</button></li>`;
+    }
 
-  if (currentPage > 1) {
-    markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
-      currentPage - 1
-    }">${currentPage}</button></li>`;
-  }
+    if (currentPage > 1) {
+      markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
+        currentPage - 1
+      }">${currentPage}</button></li>`;
+    }
 
-  markup += `<li class="pagination__item"><button class="pagination__button active"  data-page="${currentPage}">${
-    currentPage + 1
-  }</button></li>`;
-
-  if (pagesCalc > 1) {
-    markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
+    markup += `<li class="pagination__item"><button class="pagination__button active"  data-page="${currentPage}">${
       currentPage + 1
-    }">${currentPage + 2}</button></li>`;
-  }
+    }</button></li>`;
 
-  if (pagesCalc > 2) {
-    markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
-      currentPage + 2
-    }">${currentPage + 3}</button></li>`;
-  }
+    if (pagesCalc > 1) {
+      markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
+        currentPage + 1
+      }">${currentPage + 2}</button></li>`;
+    }
 
-  if (pagesCalc >= 4) {
-    markup += `<li class="pagination__item pagination__item--dots">
+    if (pagesCalc > 2) {
+      markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
+        currentPage + 2
+      }">${currentPage + 3}</button></li>`;
+    }
+
+    if (pagesCalc >= 4) {
+      markup += `<li class="pagination__item pagination__item--dots">
     ...
   </li>`;
-    markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
-      totalPages - 1
-    }">${totalPages}</button></li>`;
-  }
+      markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
+        totalPages - 1
+      }">${totalPages}</button></li>`;
+    }
 
-  console.log(markup);
-  container.innerHTML = markup;
+    console.log(markup);
+    container.innerHTML = markup;
+  }
 };

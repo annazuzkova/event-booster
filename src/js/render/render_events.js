@@ -11,10 +11,9 @@ export const renderEvents = async (events, container, template) => {
     }
     // Перевіряємо наявність подій
     if (!events || events.length === 0) {
-      container.insertAdjacentHTML(
-        'beforebegin',
-        '<p class="error-message__not-found">Oops... No events found</p>'
-      );
+      container.innerHTML =
+        '<p class="error-message__not-found">Oops... No events found</p>';
+
       return;
     }
     const templateEvents = Handlebars.compile(template); // Компілюємо шаблон Handlebars

@@ -1,3 +1,15 @@
 .main {
   flex-grow: 1;
+  padding-inline: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-inline: 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main {
+    padding-inline: 165px;
+  }
 }

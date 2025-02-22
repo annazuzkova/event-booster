@@ -9,10 +9,28 @@ export const renderButtons = async (currentPage, maxPage, container) => {
   const pagesCalc = totalPages - currentPage;
   console.log(pagesCalc);
 
-  if (currentPage > 2) {
+  console.log('asdasd');
+
+  if (currentPage >= 3) {
+    markup += `<li class="pagination__item"><button class="pagination__button" data-page="0">1</button></li>`;
+
+    markup += `<li class="pagination__item pagination__item--dots">
+      ...
+    </li>`;
+  }
+
+  if (currentPage < 2 && currentPage > 0) {
     markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
-      currentPage - 2
-    }">${currentPage - 1}</button></li>`;
+      currentPage - 1
+    }">${currentPage}</button></li>`;
+  }
+
+  if (currentPage >= 3) {
+    if (currentPage > 1) {
+      markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
+        currentPage - 2
+      }">${currentPage - 1}</button></li>`;
+    }
   }
 
   if (currentPage > 1) {
@@ -45,7 +63,7 @@ export const renderButtons = async (currentPage, maxPage, container) => {
       totalPages - 1
     }">${totalPages}</button></li>`;
   }
-
+  console.log(currentPage);
   console.log(markup);
   container.innerHTML = markup;
 };

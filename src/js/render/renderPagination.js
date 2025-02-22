@@ -7,7 +7,6 @@ export const renderButtons = async (currentPage, maxPage, container) => {
   }
 
   const pagesCalc = totalPages - currentPage;
-  console.log(pagesCalc);
 
   if (currentPage > 2) {
     markup += `<li class="pagination__item"><button class="pagination__button" data-page="${
@@ -46,6 +45,5 @@ export const renderButtons = async (currentPage, maxPage, container) => {
     }">${totalPages}</button></li>`;
   }
 
-  console.log(markup);
   container.innerHTML = markup;
 };

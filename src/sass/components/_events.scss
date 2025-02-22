@@ -12,6 +12,14 @@
   }
 }
 
+
+
+.error-message__not-found {
+  padding: 50px;
+
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .events {
     &__list {
@@ -22,6 +30,9 @@
     &__item {
       flex-basis: calc((100% - 50px) / 3);
     }
+  }
+  .error-message__not-found {
+    padding: 0 0 20px;
   }
 }
 @media (min-width: 1200px) {

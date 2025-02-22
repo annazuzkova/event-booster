@@ -23,12 +23,24 @@
         </form>
         <form action="#" class="form form__section form__section--country">
           <select
-            class="form__select"
+            class="form__select country-select"
             name="choose-country"
             id="chooseCountry"
             data-select_country
-          ></select>
+          >
+            <option
+              value="placeholder"
+              class="country-select__option"
+              selected
+              disabled
+            >
+              Choose Country
+            </option>
+          </select>
         </form>
+        <button class="filter-clear" type="button" data-clear>
+          Clear filters
+        </button>
       </div>
     </div>
   </div>

@@ -5,6 +5,8 @@ import { renderButtons } from './render/renderPagination';
 import { renderCountrie } from './render/render_country_option';
 import { addCountryHandler } from './handlers/search_by_country_code';
 import { addSearchHandlers } from './handlers/search_by_keyword';
+import { addClearHandlers } from './handlers/clear_filters';
+import { showClearFilterBtn } from './helpers/show_clear-filters';
 import { loadParams } from './helpers/storage';
 import eventsTemplate from 'bundle-text:../templates/events.hbs';
 
@@ -17,6 +19,7 @@ const eventSearch = document.querySelector('[data-search]');
 
 const app = async () => {
   renderCountrie();
+  showClearFilterBtn();
 
   const params = loadParams();
 
@@ -44,6 +47,7 @@ const app = async () => {
   addSearchHandlers(eventSearch);
   addCountryHandler(selectCountry);
   addPaginationHanlder(paginationContainer);
+  addClearHandlers();
 };
 
 app();

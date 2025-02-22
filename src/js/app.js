@@ -24,7 +24,7 @@ const app = async () => {
   const params = loadParams();
 
   if (params.keyword && eventSearch) {
-    eventSearch.value = params.keyword;
+    eventSearch.value = params.keyword.split('+').join(' ');
   }
 
   if (params.countryCode && selectCountry) {

@@ -2,6 +2,7 @@ import { getEvents } from '../api/get_events';
 import { renderEvents } from '../render/render_events';
 import { saveParams, loadParams } from '../helpers/storage';
 import { renderButtons } from '../render/renderPagination';
+import { showClearFilterBtn } from '../helpers/show_clear-filters';
 import { debounce } from 'lodash';
 import eventsTemplate from 'bundle-text:../../templates/events.hbs';
 
@@ -31,6 +32,7 @@ export const handleSearch = async event => {
     data.page.totalPages,
     paginationContainer
   );
+  showClearFilterBtn();
 };
 export const addSearchHandlers = searchInput => {
   if (searchInput) {

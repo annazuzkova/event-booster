@@ -2,6 +2,7 @@ import { getEvents } from '../api/get_events.js';
 import { renderEvents } from '../render/render_events.js';
 import { saveParams, loadParams } from '../helpers/storage.js';
 import { renderButtons } from '../render/renderPagination.js';
+import { showClearFilterBtn } from '../helpers/show_clear-filters.js';
 import eventsTemplate from 'bundle-text:../../templates/events.hbs';
 import { API_KEY } from '../config.js';
 
@@ -29,6 +30,7 @@ export const habdleCountryChange = async event => {
         paginationContainer
       );
     }
+    showClearFilterBtn();
   } catch (error) {
     console.error('Error finding events:', error);
   }

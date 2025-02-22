@@ -8,8 +8,6 @@ export const renderButtons = async (currentPage, maxPage, container) => {
 
   const pagesCalc = totalPages - currentPage;
 
-  console.log('asdasd');
-
   if (currentPage >= 3) {
     markup += `<li class="pagination__item"><button class="pagination__button" data-page="0">1</button></li>`;
 
@@ -62,7 +60,6 @@ export const renderButtons = async (currentPage, maxPage, container) => {
       totalPages - 1
     }">${totalPages}</button></li>`;
   }
-
 
   container.innerHTML = markup;
 };

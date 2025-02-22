@@ -21,6 +21,10 @@ export const renderEvent = async (event, template) => {
 
     const instance = basicLightbox.create(html);
     instance.show();
+    const buttonClose = document.querySelector('.modal__close');
+    buttonClose.addEventListener('click', () => {
+      instance.close();
+    });
   } catch (error) {
     console.error('Error rendering events:', error);
     const instance = basicLightbox.create(

@@ -6,10 +6,7 @@ export const getEvent = async (params = {}) => {
     apikey: apiKey,
   }); // Обов'язкові араметри запиту
 
-  console.log(queryParams.toString());
-
   const url = `https://app.ticketmaster.com/discovery/v2/events.json?${queryParams}`;
-  console.log(url);
 
   try {
     const response = await fetch(url);

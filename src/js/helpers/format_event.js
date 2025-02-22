@@ -25,7 +25,6 @@ export const formatEvent = data => {
       url: event.url,
     };
   });
-  console.log(formatedEvent);
 
   return {
     event: formatedEvent[0],

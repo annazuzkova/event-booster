@@ -27,17 +27,12 @@ eventsList.addEventListener('click', async event => {
 
   if (eventElement.classList.contains('event')) {
     const id = eventElement.dataset.event_id;
-    console.log(id);
 
     const data = await getEvent({
       id: id,
       apiKey: API_KEY,
     });
-    console.log(data);
 
     renderEvent(data.event, eventTemplate);
   }
 });
-// buttonClose.addEventListener('click', () => {
-//   instance.close();
-// });

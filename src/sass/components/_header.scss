@@ -136,6 +136,12 @@ option {
   .form__section {
     margin: 0;
   }
+  .clear-filters-container {
+    position: absolute;
+  }
+  .filter-clear {
+    margin-top: 100%;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -162,4 +168,5 @@ option {
       margin-bottom: 50px;
     }
   }
+
 }

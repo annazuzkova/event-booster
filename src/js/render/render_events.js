@@ -9,14 +9,22 @@ export const renderEvents = async (events, container, template) => {
     if (!template) {
       throw new Error('Template not provided');
     }
+    const errorMessage = container.previousElementSibling;
     // Перевіряємо наявність подій
-    if (!events || events.length === 0) {
-      container.insertAdjacentHTML(
-        'beforebegin',
-        '<p class="error-message__not-found">Oops... No events found</p>'
-      );
-      return;
+    if (errorMessage) {
+      errorMessage.remove();
     }
+    if (!events || events.length === 0) {
+      if (!errorMessage) {
+        container.insertAdjacentHTML(
+          'beforebegin',
+          '<p class="error-message__not-found">Oops... No events found</p>'
+        );
+        container.innerHTML = '';
+        return;
+      }
+    }
+
     const templateEvents = Handlebars.compile(template); // Компілюємо шаблон Handlebars
 
     const html = templateEvents(events); // Генеруємо HTML з подій

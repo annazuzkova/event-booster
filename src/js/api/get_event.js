@@ -5,7 +5,12 @@ export const getEvent = async (params = {}) => {
     id: id,
     apikey: apiKey,
   }); // Обов'язкові араметри запиту
+
+  console.log(queryParams.toString());
+
   const url = `https://app.ticketmaster.com/discovery/v2/events.json?${queryParams}`;
+  console.log(url);
+
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -13,6 +18,7 @@ export const getEvent = async (params = {}) => {
     }
 
     const data = await response.json();
+    console.log(data);
 
     return formatEvent(data); // Формуємо об'єкт з інформацією про пагінацію та списком івентів за допомогою функції formatEvents та повертаємо його
   } catch (error) {

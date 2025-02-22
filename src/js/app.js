@@ -4,6 +4,7 @@ import { renderEvents } from './render/render_events';
 import { renderEvent } from './render/render.event';
 import eventsTemplate from 'bundle-text:../templates/events.hbs';
 import eventTemplate from 'bundle-text:../templates/modal-card.hbs';
+
 const API_KEY = 'A8TfknWuvAEesY78luj7BLu0h4tXEN6d'; //замінити ключ на ключ тімліда
 
 const eventContainer = document.querySelector('[data-events]');
@@ -19,16 +20,24 @@ const app = async () => {
 
 app();
 
-const modalShow = async event => {
-  if (event.target.classList.contains(event)) {
-    const id = event.target.dataset.event_id;
+const eventsList = document.querySelector('.events__list');
+const buttonClose = document.querySelector('.modal__close');
+eventsList.addEventListener('click', async event => {
+  const eventElement = event.target.closest('.event');
+
+  if (eventElement.classList.contains('event')) {
+    const id = eventElement.dataset.event_id;
+    console.log(id);
+
     const data = await getEvent({
       id: id,
       apiKey: API_KEY,
     });
+    console.log(data);
+
     renderEvent(data.event, eventTemplate);
   }
-};
-
-const eventsList = document.querySelector('.events__list');
-eventsList.addEventListener('click', modalShow);
+});
+// buttonClose.addEventListener('click', () => {
+//   instance.close();
+// });

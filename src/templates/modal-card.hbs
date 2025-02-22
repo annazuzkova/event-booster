@@ -5,13 +5,13 @@
   <div class='modal__icon-container'>
     {{#if this.logo.url}}
       <img
-        class='event__img'
+        class='event__logo'
         src='{{this.logo.url}}'
         alt='Постер {{this.name}}'
       />
     {{else}}
       <img
-        class='event__img'
+        class='event__logo'
         {{! В наступному рядку підключити дефолтне зображення, коли постер, що дає бекенд не підходить }}
         src='default-image-url.jpg'
         alt='Постер {{this.name}}'
@@ -39,7 +39,7 @@
       <li class='modal__categoris'>
         <h2 class='modal__category'>INFO</h2>
         {{#if this.info}}
-          <p class='modal__text'>
+          <p class='modal__text modal__text--info'>
             {{this.info}}
           </p>
         {{else}}
@@ -60,8 +60,8 @@
       <li class='modal__categoris'>
         <h2 class='modal__category'>WHERE</h2>
         <div class='modal__text-container'>
-          <p class='modal__text'>{{this.place.city.name}}</p>
-          <p class='modal__text'>{{this.place.country.name}}</p>
+          <p class='modal__text'>{{this.city.name}}, {{this.country.name}}</p>
+          <p class='modal__text'>{{this.place}}</p>
         </div>
       </li>
       <li class='modal__categoris'>
@@ -75,17 +75,17 @@
             <p class='modal__price'>Standart
               {{this.pricesStandarMin}}-{{this.pricesStandarMax}}
               {{this.currency}}</p>
-            <button class='modal__buy'> <a href=''>BUY TICKETS</a> </button>
+            <a href='{{this.url}}' class='modal__buy'>BUY TICKETS</a>
           </div>
           <div class='modal__ticket'>
             <p class='modal__price'></p>
-            <button class='modal__buy'><a href=''>BUY TICKETS</a></button>
+            <a href='{{this.url}}' class='modal__buy'>BUY TICKETS</a>
           </div>
         </div>
       </li>
     </ul>
   </div>
-  <button class='modal__more'>MORE FROM THIS AUTHOR</button>
+  <a href='{{this.url}}' class='modal__more'>MORE FROM THIS AUTHOR</a>
 </div>
 
 {{! вже під час роботи с js будуть добавленні назви властивостей }}

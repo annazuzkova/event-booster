@@ -1,4 +1,5 @@
 .modal {
+  max-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -15,8 +16,10 @@
     top: 25px;
   }
   &__icon-container {
+    aspect-ratio: 1;
     max-width: 102px;
     border-radius: 50%;
+    overflow: hidden;
   }
   &__main {
     display: flex;
@@ -45,6 +48,10 @@
     font-size: 16px;
     text-align: center;
     color: var(--colorBgPrimary);
+  }
+  &__text--info {
+    max-height: 100px;
+    overflow: scroll;
   }
   &__text-container {
     display: flex;
@@ -97,6 +104,11 @@
     border-radius: 5px;
     padding: 10px 3px;
     background-color: none;
+    text-align: center;
+  }
+  &__logo {
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -111,6 +123,7 @@
     }
     &__photo {
       display: block;
+      object-fit: cover;
       width: 233px;
     }
     &__information {

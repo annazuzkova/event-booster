@@ -11,7 +11,7 @@ export const clearFilters = () => {
     searchInput.dispatchEvent(new Event('input'));
   }
   if (selectCountry) {
-    selectCountry.value = '';
+    selectCountry.value = 'placeholder';
   }
 
   // Скидаємо збережені параметри

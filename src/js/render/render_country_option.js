@@ -7,5 +7,5 @@ const select = document.querySelector('.form__select');
 export const renderCountrie = () => {
   const temaplateCountries = Handlebars.compile(countriesTeemplate);
   const html = temaplateCountries(countries);
-  select.insertAdjacentHTML('beforeend', html);
+  select.innerHTML = html;
 };

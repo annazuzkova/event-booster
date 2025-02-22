@@ -7,7 +7,6 @@ export const renderButtons = async (currentPage, maxPage, container) => {
   }
 
   const pagesCalc = totalPages - currentPage;
-  console.log(pagesCalc);
 
   console.log('asdasd');
 
@@ -63,7 +62,7 @@ export const renderButtons = async (currentPage, maxPage, container) => {
       totalPages - 1
     }">${totalPages}</button></li>`;
   }
-  console.log(currentPage);
-  console.log(markup);
+
+
   container.innerHTML = markup;
 };

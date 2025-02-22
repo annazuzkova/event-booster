@@ -22,6 +22,7 @@ export const paginationHandler = async event => {
 
     renderEvents(data.events, eventContainer, eventsTemplate);
     renderButtons(data.page.number, data.page.totalPages, paginationContainer);
+    window.scrollTo(0, 0);
   }
 };
 

@@ -46,6 +46,5 @@ export const renderButtons = async (currentPage, maxPage, container) => {
     }">${totalPages}</button></li>`;
   }
 
-  console.log(markup);
   container.innerHTML = markup;
 };

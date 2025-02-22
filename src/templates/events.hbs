@@ -22,11 +22,11 @@
         class='event__date'
         date-time-local='{{this.dates.start.localDate}}'
       >{{this.dates.start.localDate}}</time>
-      <div class='event__place place-event'>
+      <div class='event__place'>
         {{#if this.place}}
-          <p class='place-event__text'>{{this.place}}</p>
+          <p class='event__text correct-text'>{{this.place}}</p>
         {{else}}
-          <p class='place-event__text'>Уточнюйте місце проведення в промоутера</p>
+          <p class='event__text'>Уточнюйте місце проведення в промоутера</p>
         {{/if}}
       </div>
     </article>

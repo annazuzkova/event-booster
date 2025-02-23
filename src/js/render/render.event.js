@@ -28,6 +28,10 @@ export const renderEvent = async (event, template) => {
       instance.close();
       wrapper.classList.remove('no-scroll');
     });
+    const basicLightbox = document.querySelector('.basicLightbox');
+    basicLightbox.addEventListener('click', () => {
+      wrapper.classList.remove('no-scroll');
+    });
   } catch (error) {
     console.error('Error rendering events:', error);
     const instance = basicLightbox.create(

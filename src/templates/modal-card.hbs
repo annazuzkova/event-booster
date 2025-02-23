@@ -1,6 +1,6 @@
 <div class='modal'>
   <button class='modal__close'>
-    <img src='/src/images/modal/close.svg' alt='X' class='modal__close-icon' />
+    {{! <img src='/src/images/modal/close.svg' alt='X' class='modal__close-icon' /> }}
   </button>
   <div class='modal__icon-container'>
     {{#if this.logo.url}}
@@ -22,13 +22,13 @@
     <div class='modal__photo'>
       {{#if this.poster.url}}
         <img
-          class='event__img'
+          class='modal__img'
           src='{{this.poster.url}}'
           alt='Постер {{this.name}}'
         />
       {{else}}
         <img
-          class='event__img'
+          class='modal__img'
           {{! В наступному рядку підключити дефолтне зображення, коли постер, що дає бекенд не підходить }}
           src='default-image-url.jpg'
           alt='Постер {{this.name}}'

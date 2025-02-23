@@ -11,7 +11,9 @@
   padding: 75px 15px 104px 15px;
   &__close {
     position: absolute;
-    max-width: 17px;
+    width: 17px;
+    height: 17px;
+    background-image: url(/src/images/modal/close.svg);
     right: 25px;
     top: 25px;
   }
@@ -118,13 +120,22 @@
     max-width: 595px;
     border-radius: 300px 0;
     padding: 28px 17px 56px 50px;
+    &__main {
+      display: flex;
+      gap: 30px;
+    }
     &__icon-container {
       max-width: 70px;
     }
+    &__img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
     &__photo {
       display: block;
-      object-fit: cover;
-      width: 233px;
+      max-height: 416px;
+      max-width: 233px;
     }
     &__information {
       align-items: flex-start;
@@ -157,12 +168,16 @@
   .modal {
     max-width: 930px;
     padding: 62px 30px;
+    &__main {
+      gap: 60px;
+    }
     &__icon-container {
       max-width: 132px;
     }
     &__photo {
       display: block;
-      width: 360px;
+      max-height: 641px;
+      max-width: 360px;
     }
     &__information {
       max-width: 450px;

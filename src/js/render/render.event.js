@@ -1,6 +1,7 @@
 import Handlebars from 'handlebars';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
+const wrapper = document.querySelector('.wrapper');
 export const renderEvent = async (event, template) => {
   try {
     // Перевіряємо наявність шаблону
@@ -21,9 +22,11 @@ export const renderEvent = async (event, template) => {
 
     const instance = basicLightbox.create(html);
     instance.show();
+    wrapper.classList.add('no-scroll');
     const buttonClose = document.querySelector('.modal__close');
     buttonClose.addEventListener('click', () => {
       instance.close();
+      wrapper.classList.remove('no-scroll');
     });
   } catch (error) {
     console.error('Error rendering events:', error);
@@ -31,5 +34,6 @@ export const renderEvent = async (event, template) => {
       '<p class="error-message__wrong">Something went wrong.</p>'
     );
     instance.show();
+    wrapper.classList.add('no-scroll');
   }
 };

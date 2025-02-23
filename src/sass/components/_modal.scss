@@ -1,5 +1,4 @@
 .modal {
-  max-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -113,7 +112,10 @@
     object-fit: cover;
   }
 }
-
+.basicLightbox {
+  overflow: scroll;
+  // padding: 20px 0;
+}
 @media (min-width: 768px) {
   .modal {
     gap: 43px;
@@ -131,6 +133,7 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
+      border-radius: 10px;
     }
     &__photo {
       display: block;
@@ -166,6 +169,7 @@
 
 @media (min-width: 1280px) {
   .modal {
+    max-height: 1000px;
     max-width: 930px;
     padding: 62px 30px;
     &__main {

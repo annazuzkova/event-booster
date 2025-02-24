@@ -2,20 +2,11 @@
   <li class='events__item'>
     <article class='event' data-event_id='{{this.id}}'>
       <div class='event__photo'>
-        {{#if this.poster.url}}
-          <img
-            class='event__img'
-            src='{{this.poster.url}}'
-            alt='Постер {{this.name}}'
-          />
-        {{else}}
-          <img
-            class='event__img'
-            {{! В наступному рядку підключити дефолтне зображення, коли постер, що дає бекенд не підходить }}
-            src='./images/main/default-image.jpg'
-            alt='Постер {{this.name}}'
-          />
-        {{/if}}
+        <img
+          class='event__img'
+          src='{{this.poster.url}}'
+          alt='Постер {{this.name}}'
+        />
       </div>
       <h2 class='event__title'>{{this.name}}</h2>
       <time

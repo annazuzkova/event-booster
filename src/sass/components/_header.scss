@@ -67,7 +67,7 @@
     &::placeholder {
       color: var(--colorTextSecondary);
     }
-  
+  }
 
   &__search {
     cursor: pointer;
@@ -86,30 +86,27 @@
     -webkit-appearance: none;
     appearance: none;
     background-color: transparent;
-    border: none;
+    border: 0;
     width: 100%;
     background-image: url('/src/images/header/icons/dropdown.svg');
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: calc(100% - 30px);
-
     color: var(--colorTextSecondary);
     padding: 10px 50px 10px 30px;
+    outline: 0;
+  }
+
+  option {
+    font-size: 16px;
   }
 }
-
-option {
-  font-size: 16px;
-}
-
 @media screen and (min-width: 768px) {
   .header {
+    padding-top: 40px;
+    padding-bottom: 123px;
     &__logo {
       width: 100px;
-    }
-    &__container {
-      padding-top: 40px;
-      padding-bottom: 183px;
     }
 
     &__main {
@@ -134,7 +131,6 @@ option {
     }
   }
 
-
   .form__section {
     margin: 0;
   }
@@ -148,11 +144,9 @@ option {
 
 @media screen and (min-width: 1200px) {
   .header {
+    padding-bottom: 133px;
     &__logo {
       width: 136px;
-    }
-    &__container {
-      padding-bottom: 193px;
     }
 
     &__main {
@@ -170,5 +164,4 @@ option {
       margin-bottom: 50px;
     }
   }
-
 }

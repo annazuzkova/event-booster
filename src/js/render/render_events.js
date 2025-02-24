@@ -15,14 +15,12 @@ export const renderEvents = async (events, container, template) => {
       errorMessage.remove();
     }
     if (!events || events.length === 0) {
-      if (!errorMessage) {
-        container.insertAdjacentHTML(
-          'beforebegin',
-          '<p class="error-message__not-found">Oops... No events found</p>'
-        );
-        container.innerHTML = '';
-        return;
-      }
+      container.insertAdjacentHTML(
+        'beforebegin',
+        '<p class="error-message__not-found">Oops... No events found</p>'
+      );
+      container.innerHTML = '';
+      return;
     }
 
     const templateEvents = Handlebars.compile(template); // Компілюємо шаблон Handlebars

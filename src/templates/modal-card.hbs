@@ -1,39 +1,20 @@
 <div class='modal'>
   <button class='modal__close'>
-    {{! <img src='/src/images/modal/close.svg' alt='X' class='modal__close-icon' /> }}
   </button>
   <div class='modal__icon-container'>
-    {{#if this.logo.url}}
-      <img
-        class='event__logo'
-        src='{{this.logo.url}}'
-        alt='Постер {{this.name}}'
-      />
-    {{else}}
-      <img
-        class='modal__logo'
-        {{! В наступному рядку підключити дефолтне зображення, коли постер, що дає бекенд не підходить }}
-        src='default-image-url.jpg'
-        alt='Постер {{this.name}}'
-      />
-    {{/if}}
+    <img
+      class='event__logo'
+      src='{{this.logo.url}}'
+      alt='Постер {{this.name}}'
+    />
   </div>
   <div class='modal__main'>
     <div class='modal__photo'>
-      {{#if this.poster.url}}
-        <img
-          class='modal__img'
-          src='{{this.poster.url}}'
-          alt='Постер {{this.name}}'
-        />
-      {{else}}
-        <img
-          class='modal__img'
-          {{! В наступному рядку підключити дефолтне зображення, коли постер, що дає бекенд не підходить }}
-          src='default-image-url.jpg'
-          alt='Постер {{this.name}}'
-        />
-      {{/if}}
+      <img
+        class='modal__img'
+        src='{{this.poster.url}}'
+        alt='Постер {{this.name}}'
+      />
     </div>
     <ul class='modal__information'>
       <li class='modal__categoris'>

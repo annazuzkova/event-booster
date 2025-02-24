@@ -8,8 +8,18 @@
   }
   &__item {
     flex-basis: calc((100% - 15px) / 2);
+    animation: delayedFadeIn 0.5s ease;
   }
 }
+
+
+
+.error-message__not-found {
+  padding: 50px;
+
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .events {
     &__list {
@@ -21,6 +31,9 @@
       flex-basis: calc((100% - 50px) / 3);
     }
   }
+  .error-message__not-found {
+    padding: 0 0 20px;
+  }
 }
 @media (min-width: 1200px) {
   .events {
@@ -31,5 +44,17 @@
     &__item {
       flex-basis: calc((100% - 210px) / 4);
     }
+  }
+}
+
+@keyframes delayedFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

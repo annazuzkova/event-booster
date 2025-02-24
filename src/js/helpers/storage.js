@@ -1,5 +1,5 @@
 export const saveParams = params => {
-  localStorage.setItem('eventsParams', JSON.stringify(params));
+  localStorage.setItem('eventParams', JSON.stringify(params));
 };
 
 export const loadParams = () => {

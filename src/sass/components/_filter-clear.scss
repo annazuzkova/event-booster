@@ -1,0 +1,37 @@
+.filter-clear {
+  opacity: 0;
+  pointer-events: none;
+  color: var(--colorTextSecondary);
+  background-color: var(--colorInput);
+  backdrop-filter: blur(20px);
+  padding: 5px 15px;
+  border-radius: 20px;
+  transition: 0.4s ease;
+
+  cursor: pointer;
+  &:hover {
+    background-color: var(--colorTextSecondary);
+    color: var(--colorTextPrimary);
+  }
+}
+.filter-clear--show {
+  opacity: 1;
+  pointer-events: auto;
+  animation: btnShow 0.2s ease;
+}
+.filter-clear--hide {
+  animation: btnHide 0.2s ease;
+}
+@keyframes btnShow {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes btnHide {
+  100% {
+    opacity: 0;
+  }
+}

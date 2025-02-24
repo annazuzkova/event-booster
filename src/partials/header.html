@@ -17,16 +17,32 @@
             type="text"
             class="form__input input"
             placeholder="Start Searching"
+            data-search
           />
           <button class="form__search" type="submit"></button>
         </form>
         <form action="#" class="form form__section form__section--country">
           <select
-            class="form__select"
+            class="form__select country-select"
             name="choose-country"
             id="chooseCountry"
-          ></select>
+            data-select_country
+          >
+            <option
+              value="placeholder"
+              class="country-select__option"
+              selected
+              disabled
+            >
+              Choose Country
+            </option>
+          </select>
         </form>
+        <div class="clear-filters-container">
+          <button class="filter-clear" type="button" data-clear>
+            Clear filters
+          </button>
+        </div>
       </div>
     </div>
   </div>

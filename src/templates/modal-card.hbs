@@ -54,12 +54,17 @@
         <div class='modal__tickets'>
           <div class='modal__ticket'>
             <p class='modal__price'>Standart
-              {{this.pricesStandarMin}}-{{this.pricesStandarMax}}
+              {{this.pricesStandarMin}}
+              -
+              {{this.pricesStandarMax}}
               {{this.currency}}</p>
             <a href='{{this.url}}' class='modal__buy'>BUY TICKETS</a>
           </div>
           <div class='modal__ticket'>
-            <p class='modal__price'></p>
+            <p class='modal__price'>
+              {{this.pricesStandarMax}}
+              - ...
+              {{this.currency}}</p>
             <a href='{{this.url}}' class='modal__buy'>BUY TICKETS</a>
           </div>
         </div>

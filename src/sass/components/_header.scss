@@ -67,7 +67,7 @@
     &::placeholder {
       color: var(--colorTextSecondary);
     }
-  }
+  
 
   &__search {
     cursor: pointer;
@@ -92,6 +92,7 @@
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: calc(100% - 30px);
+
     color: var(--colorTextSecondary);
     padding: 10px 50px 10px 30px;
   }
@@ -132,6 +133,7 @@ option {
       gap: 30px;
     }
   }
+
 
   .form__section {
     margin: 0;

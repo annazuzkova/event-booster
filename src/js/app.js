@@ -1,5 +1,11 @@
 import { getEvents } from './api/get_events';
+import { getEvent } from './api/get_event';
 import { renderEvents } from './render/render_events';
+
+import { renderEvent } from './render/render.event';
+
+
+
 import { addPaginationHanlder } from './handlers/pagination__handler';
 import { renderButtons } from './render/renderPagination';
 import { renderCountrie } from './render/render_country_option';
@@ -9,6 +15,8 @@ import { addClearHandlers } from './handlers/clear_filters';
 import { showClearFilterBtn } from './helpers/show_clear-filters';
 import { loadParams } from './helpers/storage';
 import eventsTemplate from 'bundle-text:../templates/events.hbs';
+import eventsTemplate from 'bundle-text:../templates/events.hbs';
+import eventTemplate from 'bundle-text:../templates/modal-card.hbs';
 
 import { API_KEY } from './config';
 
@@ -51,3 +59,20 @@ const app = async () => {
 };
 
 app();
+
+const eventsList = document.querySelector('.events__list');
+const buttonClose = document.querySelector('.modal__close');
+eventsList.addEventListener('click', async event => {
+  const eventElement = event.target.closest('.event');
+
+  if (eventElement.classList.contains('event')) {
+    const id = eventElement.dataset.event_id;
+
+    const data = await getEvent({
+      id: id,
+      apiKey: API_KEY,
+    });
+
+    renderEvent(data.event, eventTemplate);
+  }
+});

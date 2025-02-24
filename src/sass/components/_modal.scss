@@ -65,7 +65,15 @@
   }
   &__text--info {
     max-height: 100px;
-    overflow: scroll;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 10px;
+      appearance: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 25px;
+      background-color: var(--colorTextTitle);
+    }
   }
   &__text-container {
     display: flex;

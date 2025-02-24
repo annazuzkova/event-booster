@@ -4,6 +4,33 @@
   flex-direction: column;
   column-gap: 5px;
   position: relative;
+  &__img {
+    object-fit: cover;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(17px / 14px);
+    color: var(--colorTextTitle);
+    text-align: center;
+    max-width: 112px;
+  }
+  &__time {
+    color: var(--colorTextPrimary);
+    font-size: 14px;
+    line-height: calc(17px / 14px);
+  }
+  &__text {
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--colorTextPrimary);
+    line-height: calc(15px / 12px);
+  }
+  &__photo {
+    border-radius: 50px 0px 50px 0px;
+    overflow: hidden;
+    max-width: 128px;
+  }
 }
 .event::before {
   border: 1px solid var(--colorTextTitle);
@@ -16,59 +43,43 @@
   opacity: 30%;
   content: '';
 }
-.event-photo {
-  border-radius: 50px 0px 50px 0px;
-  overflow: hidden;
-}
-.event__img {
-  object-fit: cover;
-}
-.event__title {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17.07px;
-  font-family: var(--fontTextPrimary);
 
-  color: var(--colorTextTitle);
-  text-align: center;
-  max-width: 112px;
-}
 .vector {
   margin-top: 5px;
 
   width: 10px;
   height: 10px;
 }
-.event__time {
-  color: var(--colorTextPrimary);
 
-  font-family: var(--fontTextPrimary);
-}
-.event-card__venue {
-  color: var(--colorTextPrimary);
-  font-weight: bold;
-  display: flex;
-}
 @media (min-width: 768px) {
-  .event__img {
-    width: 180;
-    height: 227;
-  }
-  .event::before {
-    height: 50%;
-    width: 70%;
-    right: 20px;
-  }
-  .event__title {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 19.5px;
-    max-width: none;
-  }
-  .event__time {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19.5px;
+  .event {
+    &__img {
+      // width: 180;
+      height: 227px;
+    }
+    &__photo {
+      max-width: 180px;
+    }
+    &::before {
+      height: 50%;
+      width: 70%;
+      right: 20px;
+    }
+    &__title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: calc(20px / 16px);
+      max-width: none;
+    }
+    &__time {
+      font-size: 16px;
+      line-height: calc(20px / 16px);
+    }
+    &__text {
+      font-size: 14px;
+      color: var(--colorTextPrimary);
+      line-height: calc(17px / 14px);
+    }
   }
 }
 @media (min-width: 1200px) {

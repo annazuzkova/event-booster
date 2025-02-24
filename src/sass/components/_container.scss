@@ -1,0 +1,13 @@
+.container {
+  padding-inline: 20px;
+}
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 80px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    padding-inline: 165px;
+  }
+}

@@ -15,7 +15,6 @@ export const getEvent = async (params = {}) => {
     }
 
     const data = await response.json();
-    console.log(data);
 
     return formatEvent(data); // Формуємо об'єкт з інформацією про пагінацію та списком івентів за допомогою функції formatEvents та повертаємо його
   } catch (error) {

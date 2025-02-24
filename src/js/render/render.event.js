@@ -22,22 +22,23 @@ export const renderEvent = async (event, template) => {
 
     const instance = basicLightbox.create(html);
     instance.show();
-    wrapper.classList.add('no-scroll');
+    document.body.classList.add('no-scroll');
+
     const buttonClose = document.querySelector('.modal__close');
-    buttonClose.addEventListener('click', () => {
+
+    const handleClose = function () {
       instance.close();
-      wrapper.classList.remove('no-scroll');
-    });
-    const basicLightbox = document.querySelector('.basicLightbox');
-    basicLightbox.addEventListener('click', () => {
-      wrapper.classList.remove('no-scroll');
+      document.body.classList.remove('no-scroll');
+      buttonClose.removeEventListener('click', handleClose);
+    };
+    buttonClose.addEventListener('click', handleClose);
+
+    document.body.addEventListener('click', event => {
+      if (event.target.classList.contains('basicLightbox')) {
+        document.body.classList.remove('no-scroll');
+      }
     });
   } catch (error) {
     console.error('Error rendering events:', error);
-    const instance = basicLightbox.create(
-      '<p class="error-message__wrong">Something went wrong.</p>'
-    );
-    instance.show();
-    wrapper.classList.add('no-scroll');
   }
 };
